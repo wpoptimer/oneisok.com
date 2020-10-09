@@ -4,7 +4,7 @@ export const environment = {
   appUrl: 'https://oneisok.com',
   appImageUrl: 'https://oneisok.com/assets/img/oneisok.png',
   appId: 'irpmZyr0yhWWgSHb2emAZ6LZzcLLAobMYsDKwmyuZobSri0UeTZaolBrRPn6iJbntc0MSkx77rERAZYvkSF9qgAZ6Bagjbnu2kG6',
-  fbId: 'YOUR_FB_ID',
+  fbId: '2814685038750204',
   googleMapsApiKey: 'AIzaSyBSIVUTMRVcw1W1Yl4F3iGhjRvglUa9LYA',
   androidHeaderColor: '#3880ff',
   defaultUnit: 'mi',
