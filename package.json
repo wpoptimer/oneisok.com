@@ -1,5 +1,5 @@
 {
-  "name": "oneisok-app",
+  "name": "oneisok",
   "version": "1.0.0",
   "author": "Oneisok",
   "homepage": "https://oneisok.com/",
@@ -61,7 +61,7 @@
     "@types/hammerjs": "^2.0.36",
     "angularx-social-login": "^3.2.0",
     "cordova-admob-plus": "^0.36.0",
-    "cordova-android": "^9.0.0",
+    "cordova-android": "9.0.0",
     "cordova-ios": "^6.1.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-androidx": "^2.0.0",
@@ -95,15 +95,15 @@
     "onesignal-cordova-plugin": "^2.11.0",
     "parse": "^2.15.0",
     "parse-push-plugin": "git+https://github.com/fmendoza/parse-push-plugin.git#fcm",
+    "rxjs": "~6.5.5",
     "snazzy-info-window": "^1.1.1",
     "sweetalert2": "^9.17.1",
-    "web-social-share": "^6.4.0",
-    "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "web-social-share": "^6.4.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.0",
+    "@angular-devkit/build-angular": "^0.1002.0",
     "@angular/cli": "~10.0.5",
     "@angular/compiler": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
@@ -114,6 +114,7 @@
     "@types/node": "^12.11.1",
     "@types/parse": "^2.12.1",
     "codelyzer": "^6.0.0",
+    "ionic": "^5.4.16",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -162,7 +163,7 @@
       },
       "onesignal-cordova-plugin": {},
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "YOUR_REVERSED_CLIENT_ID",
+        "REVERSED_CLIENT_ID": "",
         "PLAY_SERVICES_VERSION": "15.0.1"
       },
       "cordova.plugins.diagnostic": {
@@ -171,8 +172,8 @@
       },
       "cordova-plugin-nativeaudio": {},
       "cordova-admob-plus": {
-        "APP_ID_ANDROID": "ca-app-pub-xxxxxxxxxxxxxxxxxxxxxxx",
-        "APP_ID_IOS": "ca-app-pub-xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "APP_ID_ANDROID": "",
+        "APP_ID_IOS": "",
         "PLAY_SERVICES_VERSION": "17.1.0"
       }
     },

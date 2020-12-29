@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary" fixed>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'MORE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #container scrollEvents="true">
+  <ion-refresher slot="fixed" (ionRefresh)="onReload($event)">
+    <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingText="{{ 'REFRESHING' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <empty-view *ngIf="isErrorViewVisible" icon="alert-circle-outline" [text]="'ERROR_NETWORK' | translate">
+  </empty-view>
+
+  <empty-view *ngIf="isEmptyViewVisible" icon="bookmark" [text]="'EMPTY_DATA' | translate">
+  </empty-view>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="3">
+        <ion-item class="ion-margin-vertical" lines="none" color="light">
+        <ion-select placeholder="India +91" (ionChange)="getCountries($event)" [(ngModel)]="callingCode">
+          <ion-select-option *ngFor="let c of countries" [value] = "c" >{{c.name}}</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="9">
+        <ion-item class="ion-margin-vertical" lines="none" color="light">
+        <ion-input type="text" placeholder="Phone Number" maxlength="10" [(ngModel)]="phoneNumber"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="3"></ion-col>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="9">
+        <ion-item class="ion-margin-vertical" lines="none" color="light">
+         <ion-textarea cols="5" rows="5" placeholder="Message (Optional)" [(ngModel)]="whatsappMessage"></ion-textarea>
+        </ion-item>
+       </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="3" size-md="3">
+        <ion-button class="ion-margin-vertical" color="primary" expand="block" shape="round" (click)="sendWhatsapp()">
+          <span>{{ 'SEND' | translate }}</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12">
+        <div>
+          <h3>What is WhatsApp Direct?</h3>
+          <p>It is rather inconvenient to add someone to your contacts, only to send them a single WhatsApp text. WhatsApp Direct allows you to send WhatsApp messages directly to the phone number, without saving it to your contacts.</p>
+          <p>Just select the appropriate country code, enter the receiver's phone number and the text message that you want to send, then click on the Send button. You will be redirected to the WhatsApp chat for that number, even though the contact is not saved on your device.</p>
+          <p><b>Note:</b> The entered phone number should already be registered on WhatsApp, otherwise the message won't be received.</p>
+          <p><b>Disclosure:</b> WhatsApp Direct is a home-brewed web app created at 7labs for the benefit of all our readers. As such, we built this app keeping the user’s privacy in mind. Any information that is shared on WhatsApp Direct (phone numbers, messages, etc.), is sent directly to WhatsApp using their APIs. We do not store this information, nor do we forward this to other third parties.</p>
+          <hr>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

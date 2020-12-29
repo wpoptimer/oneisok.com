@@ -1,0 +1,194 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary" fixed>
+    <div slot="start" class="hide-xs-up show-lg-up">
+      <ion-button class="ion-no-margin ion-text-capitalize" fill="clear" color="white" [routerLink]="['./messages']">
+        <ion-icon name="paper-plane-outline"></ion-icon>
+        <span class="text-normal ion-margin-start">{{ 'WHATSAPP_DIRECT_LINK' | translate }}</span>
+      </ion-button>
+    </div>
+    <div>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content #container [scrollEvents]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="onReload($event)">
+    <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
+                           refreshingText="{{ 'REFRESHING' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <empty-view *ngIf="isErrorViewVisible" icon="alert-circle-outline" [text]="'ERROR_NETWORK' | translate">
+  </empty-view>
+
+  <ion-grid fixed>
+
+    <section *ngIf="isContentViewVisible">
+
+      <!-- Top Slide List -->
+
+      <div>
+        <ion-slides pager="true" (ionSlidesDidLoad)="onSlidesTopDidLoad()"
+                    (ionSlideWillChange)="onSlidesTopWillChange()" [options]="slideOpts">
+          <ion-slide *ngFor="let slide of slides">
+            <div class="ion-activatable full-width" (click)="onSlideTouched(slide)">
+              <div class="slide-img fade-in" defaultImage="./assets/img/placeholder.png" [lazyLoad]="slide.image?.url()"
+                   [customObservable]="loadAndScroll">
+              </div>
+              <ion-ripple-effect type="bounded"></ion-ripple-effect>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+      <div class="ion-padding main-content">
+        <!-- Start Essential List -->
+        <ion-row class="ion-align-items-center ion-padding-start">
+          <ion-col size="6" class="ion-text-start">
+            <ion-text color="medium">
+              <span class="text-normal padding-small">{{ 'ESSENTIAL' | translate }}</span>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+
+          </ion-col>
+        </ion-row>
+        <div class="padding-horizontal-medium">
+          <ion-row>
+            <ion-col size-xs="4" size-sm="4" size-md="2" *ngFor="let essential of essentials">
+              <div>
+                <ion-card button class="shadow fade-in" style="margin:4px" color="white" >
+                  <img defaultImage="./assets/img/placeholder.png" [customObservable]="loadAndScroll"
+                       [lazyLoad]="essential.imageThumb?.url()" />
+                  <ion-card-content class="ion-text-center ion-text-nowrap">
+                    <p class="text-small bold ellipsis link">{{ essential.title }}</p>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- End Essential List -->
+        <!-- Category List -->
+
+        <ion-row class="ion-align-items-center ion-padding-start">
+          <ion-col size="6" class="ion-text-start">
+            <ion-text color="medium">
+              <span class="text-normal padding-small">
+                {{ 'CATEGORIES' | translate }}
+              </span>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+            <ion-button class="ion-no-margin ion-text-capitalize" fill="clear" color="primary"
+                        [routerLink]="['./categories']">
+              <span class="link text-normal">
+                {{ 'VIEW_ALL' | translate }}
+              </span>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <div class="padding-horizontal-medium">
+          <ion-row>
+            <ion-col size-xs="4" size-sm="4" size-md="2" *ngFor="let category of categories">
+              <div>
+                <ion-card button class="shadow fade-in" style="margin:4px" color="white" [routerLink]="['./placesAdmin']"
+                          [queryParams]="{ cat: category.id }">
+                  <img defaultImage="./assets/img/placeholder.png" [customObservable]="loadAndScroll"
+                       [lazyLoad]="category.imageThumb?.url()" />
+                  <ion-card-content class="ion-text-center ion-text-nowrap">
+                    <p class="text-small bold ellipsis link">{{ category.title }}</p>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <!-- Start Offers List -->
+        <ion-row class="ion-align-items-center ion-padding-start">
+          <ion-col size="6" class="ion-text-start">
+            <ion-text color="medium">
+              <span class="text-normal padding-small">{{ 'OFFERS' | translate }}</span>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+
+          </ion-col>
+        </ion-row>
+        <div class="padding-horizontal-medium">
+          <ion-row>
+            <ion-col size-xs="4" size-sm="4" size-md="2" *ngFor="let offer of offers">
+              <div>
+                <ion-card button class="shadow fade-in" style="margin:4px" color="white" >
+                  <img defaultImage="./assets/img/placeholder.png" [customObservable]="loadAndScroll"
+                       [lazyLoad]="offer.imageThumb?.url()" />
+                  <ion-card-content class="ion-text-center ion-text-nowrap">
+                    <p class="text-small bold ellipsis link">{{ offer.title }}</p>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- End Offers List -->
+        <ion-row class="ion-align-items-center ion-padding-start">
+          <ion-col size="6" class="ion-text-start">
+            <ion-text color="medium">
+              <span class="text-normal padding-small">{{ 'ADVERTISEMENT' | translate }}</span>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </section>
+
+
+
+    <section *ngIf="isLoadingViewVisible">
+      <div>
+        <ngx-skeleton-loader count="1" appearance="circle"
+                             [theme]="{ width: '100%', height: '250px', 'border-radius': '4px' }">
+        </ngx-skeleton-loader>
+      </div>
+
+      <ion-row class="ion-nowrap">
+        <ion-col size-xs="4" size-sm="6" size-md="6" size-lg="2" *ngFor="let item of skeletonArray">
+          <ngx-skeleton-loader count="1" appearance="circle"
+                               [theme]="{ width: '100%', height: '75px', 'border-radius': '4px' }">
+          </ngx-skeleton-loader>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-nowrap">
+        <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="3" *ngFor="let item of skeletonArray">
+          <ngx-skeleton-loader count="1" appearance="circle"
+                               [theme]="{ width: '100%', height: '150px', 'border-radius': '4px' }">
+          </ngx-skeleton-loader>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-nowrap">
+        <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="3" *ngFor="let item of skeletonArray">
+          <ngx-skeleton-loader count="1" appearance="circle"
+                               [theme]="{ width: '100%', height: '150px', 'border-radius': '4px' }">
+          </ngx-skeleton-loader>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-nowrap">
+        <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="3" *ngFor="let item of skeletonArray">
+          <ngx-skeleton-loader count="1" appearance="circle"
+                               [theme]="{ width: '100%', height: '150px', 'border-radius': '4px' }">
+          </ngx-skeleton-loader>
+        </ion-col>
+      </ion-row>
+    </section>
+
+  </ion-grid>
+
+</ion-content>

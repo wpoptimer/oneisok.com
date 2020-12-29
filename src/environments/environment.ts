@@ -10,20 +10,20 @@ export const environment = {
   defaultUnit: 'km',
   defaultLang: 'en',
   googleClientId: '843316314827-gcs7m3nitogse7sr9jf6id785fo77p31.apps.googleusercontent.com',
-  stripePublicKey: 'YOUR_STRIPE_PUBLIC_KEY',
+  stripePublicKey: '',
   oneSignal: {
     appId: '9b4d7f76-60e4-4ca9-86e9-434b4b5c6dd4',
     googleProjectNumber: '843316314827'
   },
   currency: {
-    code: 'INR',
+    code: 'USD',
     display: 'symbol',
     digitsInfo: '1.2-2',
   },
   admob: {
     banner: {
-      android: 'ca-app-pub-xxxxxxxxxxxxxxxxxxxx',
-      ios: 'ca-app-pub-xxxxxxxxxxxxxxxxxxxx',
+      android: 'ca-app-pub-10001626946445555',
+      ios: 'ca-app-pub-10001626946545555',
     },
   }
-};
+  };

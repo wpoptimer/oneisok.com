@@ -1,7 +1,10 @@
 {
-  "APP_NAME": "Nearme",
+  "APP_NAME": "Oneisok",
   "APP_DESCRIPTION": "Ionic 5 Starter / Template for location based apps",
   "CATEGORIES": "Categories",
+  "ESSENTIAL": "Essential",
+  "OFFERS": "Offers",
+  "ADVERTISEMENT": "Advertisement",
   "MAP": "Map",
   "MY_FAVORITES": "My Favorites",
   "SETTINGS": "Settings",
@@ -183,5 +186,7 @@
   "PROMOTE_LISTING": "Promote listing",
   "NEW_PACKAGE": "New package",
   "PURCHASED_PACKAGES": "Your purchased packages",
-  "FREE": "Free"
+  "FREE": "Free",
+  "SEND": "Send",
+  "WHATSAPP_DIRECT_LINK": "Whatsapp Direct"
 }

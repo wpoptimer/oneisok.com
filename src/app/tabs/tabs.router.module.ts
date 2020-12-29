@@ -64,6 +64,122 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'more',
+        data: { tab: 'more' },
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/more/more.module').then(m => m.MorePageModule)
+          },
+          {
+            path: 'search',
+            loadChildren: () => import('../pages/search/search.module').then(m => m.SearchPageModule)
+          },
+          {
+            path: 'messages',
+            loadChildren: () => import('../pages/direct-message/direct-message.module').then(m => m.DirectMessagePageModule)
+          },
+          {
+            path: 'categories',
+            loadChildren: () => import('../pages/category-list/category-list.module').then(m => m.CategoryListPageModule)
+          },
+          {
+            path: 'placesAdmin',
+            loadChildren: () => import('../pages/place-admin-list/place-admin-list.module').then(m => m.PlaceAdminListPageModule)
+          },
+          {
+            path: 'places/map',
+            loadChildren: () => import('../pages/map/map.module').then(m => m.MapPageModule)
+          },
+          {
+            path: 'places/add',
+            loadChildren: () => import('../pages/place-add/place-add.module').then(m => m.PlaceAddPageModule)
+          },
+          {
+            path: 'places/:id/:slug/reviews',
+            loadChildren: () => import('../pages/review-list/review-list.module').then(m => m.ReviewListPageModule)
+          },
+          {
+            path: 'places/:id/reviews',
+            loadChildren: () => import('../pages/review-list/review-list.module').then(m => m.ReviewListPageModule)
+          },
+          {
+            path: 'places/:id',
+            loadChildren: () => import('../pages/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+          },
+          {
+            path: 'places/:id/:slug',
+            loadChildren: () => import('../pages/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+          },
+          {
+            path: 'posts/:id',
+            loadChildren: () => import('../pages/post-detail/post-detail.module').then(m => m.PostDetailPageModule)
+          },
+          {
+            path: 'posts/:id/:slug',
+            loadChildren: () => import('../pages/post-detail/post-detail.module').then(m => m.PostDetailPageModule)
+          },
+        ]
+      },
+      {
+        path: 'more',
+        data: { tab: 'more' },
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/more/more.module').then(m => m.MorePageModule)
+          },
+          {
+            path: 'search',
+            loadChildren: () => import('../pages/search/search.module').then(m => m.SearchPageModule)
+          },
+          {
+            path: 'message',
+            loadChildren: () => import('../pages/direct-message/direct-message.module').then(m => m.DirectMessagePageModule)
+          },
+          {
+            path: 'categories',
+            loadChildren: () => import('../pages/category-list/category-list.module').then(m => m.CategoryListPageModule)
+          },
+          {
+            path: 'places',
+            loadChildren: () => import('../pages/place-list/place-list.module').then(m => m.PlaceListPageModule)
+          },
+          {
+            path: 'places/map',
+            loadChildren: () => import('../pages/map/map.module').then(m => m.MapPageModule)
+          },
+          {
+            path: 'places/add',
+            loadChildren: () => import('../pages/place-add/place-add.module').then(m => m.PlaceAddPageModule)
+          },
+          {
+            path: 'places/:id/:slug/reviews',
+            loadChildren: () => import('../pages/review-list/review-list.module').then(m => m.ReviewListPageModule)
+          },
+          {
+            path: 'places/:id/reviews',
+            loadChildren: () => import('../pages/review-list/review-list.module').then(m => m.ReviewListPageModule)
+          },
+          {
+            path: 'places/:id',
+            loadChildren: () => import('../pages/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+          },
+          {
+            path: 'places/:id/:slug',
+            loadChildren: () => import('../pages/place-detail/place-detail.module').then(m => m.PlaceDetailPageModule)
+          },
+          {
+            path: 'posts/:id',
+            loadChildren: () => import('../pages/post-detail/post-detail.module').then(m => m.PostDetailPageModule)
+          },
+          {
+            path: 'posts/:id/:slug',
+            loadChildren: () => import('../pages/post-detail/post-detail.module').then(m => m.PostDetailPageModule)
+          },
+        ]
+      },
+      {
         path: 'categories',
         data: { tab: 'categories' },
         children: [

@@ -20,10 +20,10 @@ export const environment = {
     display: 'symbol',
     digitsInfo: '1.2-2',
   },
-  admob: {
+ admob: {
     banner: {
-      android: 'ca-app-pub-xxxxxxxxxxxxxxxxxxxx',
-      ios: 'ca-app-pub-xxxxxxxxxxxxxxxxxxxx',
+      android: 'ca-app-pub-10001626946445555',
+      ios: 'ca-app-pub-10001626946545555',
     },
   }
 };

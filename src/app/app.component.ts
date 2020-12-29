@@ -14,12 +14,17 @@ import { WindowRef } from './services/window-ref';
 import { Router, NavigationEnd } from '@angular/router';
 import { Preference } from './services/preference';
 import { Category } from './services/categories';
+import { CategoryAdmin } from './services/categoriesAdmin';
+import { Essential } from './services/essential';
+import { Offer } from './services/offer';
 import { Place } from './services/place-service';
+import { PlaceAdmin } from './services/place-admin-service';
 import { Review } from './services/review-service';
 import { Post } from './services/post';
 import { WalkthroughPage } from './pages/walkthrough/walkthrough';
 import { EventBusService, EmitEvent } from './services/event-bus.service';
 import { Slide } from './services/slider-image';
+import { SliderImageAdmin } from './services/slider-image-admin';
 import { SocialAuthService } from 'angularx-social-login';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { AudioService } from './services/audio-service';
@@ -209,10 +214,15 @@ export class AppComponent {
 
   setupParse() {
     Slide.getInstance();
+    SliderImageAdmin.getInstance();
     Post.getInstance();
     Review.getInstance();
     Place.getInstance();
+    PlaceAdmin.getInstance();
     Category.getInstance();
+    CategoryAdmin.getInstance();
+    Essential.getInstance();
+    Offer.getInstance();
     User.getInstance();
 
     Parse.initialize(environment.appId);

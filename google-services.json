@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "59353415752",
+    "firebase_url": "https://oneisokoio.firebaseio.com",
+    "project_id": "oneisokoio",
+    "storage_bucket": "oneisokoio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59353415752:android:3cd78f70268c3080e8187d",
+        "android_client_info": {
+          "package_name": "com.oneisok.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59353415752-oqo50qcf802olcjv9003b2d2be3me66r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oneisok.app",
+            "certificate_hash": "7a23d9b03481c65a25239932fc96deac7f74ff8f"
+          }
+        },
+        {
+          "client_id": "59353415752-ianv9l1jmi23h9aagful11qjhm7fqqlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6rOuIT4GZHUyAko3h7G4l8BoauTidCy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59353415752-ianv9l1jmi23h9aagful11qjhm7fqqlf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
