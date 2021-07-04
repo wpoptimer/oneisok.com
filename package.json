@@ -61,7 +61,6 @@
     "@types/hammerjs": "^2.0.36",
     "angularx-social-login": "^3.2.0",
     "cordova-admob-plus": "^0.36.0",
-    "cordova-android": "9.0.0",
     "cordova-ios": "^6.1.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-androidx": "^2.0.0",
@@ -178,8 +177,7 @@
       }
     },
     "platforms": [
-      "ios",
-      "android"
+      "ios"
     ]
   }
 }
