@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   serverUrl: 'https://admin.oneisok.com/api',
   appUrl: 'https://oneisok.com',
-  appImageUrl: '/assets/img/oneisok.png',
+  appImageUrl: 'https://oneisok.com/assets/img/oneisok.png',
   appId: 'VxQTL8eC6EZz3NV0ys8jPCGwafcH7CiTZOq7gtKStssuAHdnZPClLFiL48Cw2bnHWY8VyYD4MLaAzKQQcoD6v7JHeSWxkumJ0yg6',
   fbId: '2814685038750204',
   googleMapsApiKey: 'AIzaSyBSIVUTMRVcw1W1Yl4F3iGhjRvglUa9LYA',
